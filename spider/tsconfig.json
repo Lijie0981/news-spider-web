@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "outDir": "../build/spider/src",
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "target": "es5",
+        "baseUrl": "src",
+        "paths": {
+            "configs/*": [ "configs/*" ]
+        }
+    },
+    "include": [
+        "./src/server/*.ts",
+        "./src/index.ts"
+    ],
+    "exclude": [
+        "./src/configs/163.json"
+    ]
+}
