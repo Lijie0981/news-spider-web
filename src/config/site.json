@@ -1,0 +1,50 @@
+{
+    "网易新闻": {
+        "name": "网易新闻",
+        "site": "https://news.163.com/",
+        "subSite": [],
+        "htmlClass": {
+            "header": ".channel-all ul",
+            "content": "",
+            "footer": "",
+            "side_left": "",
+            "side_right": ""
+        }
+    },
+    "新浪新闻": {
+        "name": "新浪新闻",
+        "site": "https://news.sina.com.cn/",
+        "subSite": [],
+        "htmlClass": {
+            "header": ".cNavLinks",
+            "content": "",
+            "footer": "",
+            "side_left": "",
+            "side_right": ""
+        }
+    },
+    "腾讯新闻": {
+        "name": "腾讯新闻",
+        "site": "https://news.qq.com/",
+        "subSite": [],
+        "htmlClass": {
+            "header": ".main-list.fl > ul",
+            "content": "",
+            "footer": "",
+            "side_left": "",
+            "side_right": ""
+        }
+    },
+    "人民网": {
+        "name": "人民网",
+        "site": "http://www.people.com.cn/",
+        "subSite": [],
+        "htmlClass": {
+            "header": "nav",
+            "content": "",
+            "footer": "",
+            "side_left": "",
+            "side_right": ""
+        }
+    }
+}
