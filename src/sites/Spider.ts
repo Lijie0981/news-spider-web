@@ -1,32 +1,8 @@
 import cheerio from 'cheerio';
 import request from 'superagent-charset';
 import debug from 'debug';
-// import 
-interface Sites {
-    site: string,
-    name: string,
-    subSite: Object,
-    htmlClass: HtmlClass,
-    timeSplit: string
-}
-interface HtmlClass {
-    header: string,
-    content?: string,
-    footer?: string,
-    side_left?: string,
-    sid_right?: string
-}
-interface $ {
-
-}
-interface Article {
-    title: string,
-    abstract: string,
-    img: string,
-    timestamp?: Number, 
-    date: string,
-    source?: string
-}
+import {Sites, Article} from '../interface/interface';
+import mongoose from "mongoose";
 export class Spider {
     sites: Sites;
     log: Function;
@@ -45,7 +21,7 @@ export class Spider {
         return cheerio.load(emptyPage);
     }
     createDatabase() {
-        
+
     }
     setSubSites(subSite: Object) {
         this.sites.subSite = subSite;
