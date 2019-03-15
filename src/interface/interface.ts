@@ -1,4 +1,4 @@
-export interface Sites {
+export interface Site {
     site: string,
     name: string,
     subSite: Object,

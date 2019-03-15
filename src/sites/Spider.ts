@@ -1,21 +1,34 @@
 import cheerio from 'cheerio';
-import request from 'superagent-charset';
+import request from 'request';
 import debug from 'debug';
-import {Sites, Article} from '../interface/interface';
+import { Site, Article } from '../interface/interface';
+import iconv from 'iconv-lite';
 import mongoose from "mongoose";
 export class Spider {
-    sites: Sites;
+    site: Site;
     log: Function;
-    constructor(sites: Sites) {
-        this.sites = sites;
-        this.log = debug(`spider:${this.sites.name}`);
+    constructor(site: Site) {
+        this.site = site;
+        this.log = debug(`spider:${this.site.name}`);
     }
     async getPageContent(url: string) {
-        let res = await request.get(url).charset('gbk');
-        this.log('spider get page content status', res.status);
-        this.log('spider get page content header', res.header);
-        if (res.status) {
-            return cheerio.load(res.text);
+        let res = await new Promise<any>((res, rej) => {
+            request({ uri: url, encoding: null }, (err, response, body) => {
+                if (err) {
+                    rej(err);
+                }
+                else {
+                    let resData = {
+                        body: iconv.decode(body, 'gbk'),
+                        response
+                    };
+                    res(resData);
+                }
+            });
+        });
+        this.log('res header', res.response.headers);
+        if (res.body) {
+            return cheerio.load(res.body);
         }
         let emptyPage = '<html></html>';
         return cheerio.load(emptyPage);
@@ -24,10 +37,12 @@ export class Spider {
 
     }
     setSubSites(subSite: Object) {
-        this.sites.subSite = subSite;
+        this.site.subSite = subSite;
         // TODO write into database
     }
     setArticle(acticle: Article) {
         // TODO write into database
     }
+    run () {}
+    pause () {}
 }

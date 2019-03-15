@@ -40,7 +40,7 @@
         "site": "http://www.people.com.cn/",
         "subSite": [],
         "htmlClass": {
-            "header": "nav",
+            "header": "nav>div",
             "content": "",
             "footer": "",
             "side_left": "",
