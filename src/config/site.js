@@ -1,21 +1,6 @@
-export interface SITE {
-    name: string;
-    index: string;
-    htmlClass: htmlClass;
-    subLinks: object;
-    subSite?: [];
-    key: string;
-    sourceTimeReg?: object;
-    pageLinks?: object;
-    articles?: object;
-}
-interface htmlClass {
-    header:string;
-}
-interface SITE_LIST {
-    [key: string]: SITE
-}
-export let sitelist: SITE_LIST = {
+"use strict";
+exports.__esModule = true;
+exports.sitelist = {
     "netease": {
         "key": "netease",
         "name": "网易新闻",

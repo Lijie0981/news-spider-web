@@ -1,3 +1,0 @@
-{
-    "ignore": ["spider/src/configs/*.json", "build/spider/src/configs/*.json"]
-}

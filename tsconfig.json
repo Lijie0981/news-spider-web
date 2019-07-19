@@ -4,10 +4,16 @@
         "esModuleInterop": true,
         "target": "es6",
         "resolveJsonModule": true,
-        // "noImplicitAny": true,
+        "noImplicitAny": true,
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "dist",
+        "removeComments": true,
+        // "allowJs": true,
+        // "checkJs": true,
+        "declarationDir": "./bin",
+        "declaration": true,
+        "lib": ["es2018"],
         "baseUrl": ".",
         "paths": {
             "*": [
