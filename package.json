@@ -21,7 +21,7 @@
   "dependencies": {
     "@types/moment": "^2.13.0",
     "@types/url-parse": "^1.4.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "connect-mongo": "^2.0.3",
